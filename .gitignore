@@ -70,3 +70,23 @@ frontend/.angular/cache
 *.log
 *.log.*
 *.lck
+
+###################
+# Docker artifacts #
+###################
+# Buildx cache
+.buildx-cache/
+# Docker Desktop/CLI runtime data
+.docker/
+# BuildKit state
+.buildkit/
+# Local exported images / tarballs
+*.tar
+*.tar.gz
+# Compose override / local env files
+docker-compose.override.yml
+docker-compose.*.local.yml
+.env
+.env.local
+# Local docker image caches
+docker-images/
