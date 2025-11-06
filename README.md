@@ -57,12 +57,28 @@ curl http://localhost:8080/api/pos/1 # add valid POS id here
 ```
 
 #### Create POS
-
+To create a new POS I used the following command:
 ```shell
-curl --header "Content-Type: application/json" --request POST --data '{"name":"New Café","description":"Description","type":"CAFE","campus":"ALTSTADT","street":"Hauptstraße","houseNumber":"100","postalCode":69117,"city":"Heidelberg"}' http://localhost:8080/api/pos
+curl --header "Content-Type: application/json" --request POST --data '{"name":"Bäckerei Kohlmann GmbH","description":"Lecker Essen, habe Hunger - Frech!","type":"CAFE","campus":"ALTSTADT","street":"Im Neuenheimer Feld","houseNumber":"370","postalCode":69120,"city":"Heidelberg"}' http://localhost:8080/api/pos
 ```
 
-#### Update POS
+I then used the following command to verify the creation:
+```shell
+curl --header "Content-Type: application/json" --request GET http://localhost:8080/api/pos |/opt/homebrew/bin/bat -l json
+```
+This yielded the following result:
+```shell
+
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   300    0   300    0     0   8434      0 --:--:-- --:--:-- --:--:--  8333
+─────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     │ STDIN
+─────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ [{"id":1,"createdAt":"2025-11-06T21:36:46.787255","updatedAt":"2025-11-06T21:36:46.787255","name":"Bäckerei Kohlmann GmbH","description":"Lecker Essen, h
+     │ abe Hunger - Frech!","type":"CAFE","campus":"ALTSTADT","street":"Im Neuenheimer Feld","houseNumber":"370","postalCode":69120,"city":"Heidelberg"}]
+─────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+```
 
 Update title and description:
 ```shell
