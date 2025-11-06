@@ -72,8 +72,7 @@ public class PosSystemTests extends AbstractSysTest {
         // Verify changes persist
         Pos retrievedPos = posDtoMapper.toDomain(TestUtils.retrievePosById(posToUpdate.getId()));
 
-        // Break test case
-        posToUpdate.setName("THIS STRING BREAKS THE TEST");
+        posToUpdate.setName("Schmelzpunkt (Updated)");
 
         assertThat(retrievedPos)
                 .usingRecursiveComparison()
