@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: ccpass
       POSTGRES_DB: campuscoffee
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql
     ports:
       - "5432:5432"
     healthcheck:
